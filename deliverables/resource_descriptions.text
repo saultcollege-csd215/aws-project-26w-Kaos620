@@ -1,0 +1,61 @@
+{
+    "Configuration": {
+        "FunctionName": "csd215-lambda",
+        "FunctionArn": "arn:aws:lambda:us-east-1:272657211021:function:csd215-lambda",
+        "Runtime": "python3.9",
+        "Role": "arn:aws:iam::272657211021:role/LabRole",
+        "Handler": "lambda_app.main",
+        "CodeSize": 2768,
+        "Description": "",
+        "Timeout": 3,
+        "MemorySize": 128,
+        "LastModified": "2026-03-29T16:13:36.000+0000",
+        "CodeSha256": "z26gYE+jaXoYsJTmSPYHlF00zGmgPIkYZ1yE0MiKXgw=",
+        "Version": "$LATEST",
+        "VpcConfig": {
+            "SubnetIds": [
+                "subnet-067006158accff5ee"
+            ],
+            "SecurityGroupIds": [
+                "sg-05a53b02bbaefa746"
+            ],
+            "VpcId": "vpc-02c3cd3f7f640f525",
+            "Ipv6AllowedForDualStack": false
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "6bafb25b-a022-4694-a4c2-6caa84137aee",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:e753a51552fe67962908c0ac2460f73995d66390004e2d300f2697685ca61d92"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/csd215-lambda"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/272657211021/csd215-lambda-3b6205d1-f5f8-4fb4-aae4-a3085bdfe9ef?vers
+ionId=7zQTHefVgyMlM872kDfMV1Ns9H6g6V58&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEMaCXVzLWVhc3QtMSJGMEQCIEE5DTnhfDVpVTCazOyoTXDIUOv2fKrTlbXubyOO5qrTAiBdgmhrc7n%2B
+jOaSohy93YiqStOFy%2F0EEYDkp62%2FtzrO%2ByqLAggMEAQaDDQ3OTIzMzAyNTM3OSIMoZe3fkDZSzLY426hKugB6i8WMBXtbiMt%2BiKF5V2%2F9qDs%2FbxQT2kW%2FeZGkqM%2FrOlKqRNXxxPrU6C6gB
+lNpQ1UW9IZy7mDTOvv61e1Y3BbAMdSVvgWG1dsIwcBYjcxqy2ZDV506n7y9yHRwMgZ5%2FWRDUrwPuD8lqxBAS%2BqwRaZqPc9PSD%2BWoAkXdcCSIT73ON0FCQiFxoDBaRrSC9GTzuXI0H8L%2FC5OmT7XMj8
+%2Bw7%2BiS2ScNwI%2F8W7Dnp%2FJCSZwV50cEWkmKnurqeCTrx6OT18y8OqxTRL69E%2B007g%2FHCXCr8klEHHww5dOqku6B9B89OCmAL%2FmE1gYzCDiqTOBjqOAZohK%2B2JqqVw0WEu%2BhDgTOWhxO%2
+FUWfo9FGVBJ4mG1xMKlQ5%2Brwcc19qoh39lw0qGSoF%2BvUw97nPDRdRV0WFrQzFh7KLfjmX7P2JvDwSl%2Fh5nAqpJlpgHUGr5o4tQcI9XNy8pnJZzhieAzSZ2ILlll6hBjJ0bAq4BPj%2FYuQmvljYhZXgj
+slUWnSgGRJEFLVE%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260329T161804Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVR2DRDQO
+2Q%2F20260329%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=907d3febeefbe3703fbedf3d8c8f2cfcdc0d7cbe820f653c2f460a2c9b1f9938"
+    }
+}
