@@ -3,8 +3,7 @@ name: Flask App Test Workflow
 on:
   push:
     branches:
-      - main  # Make sure this matches your lab branch name!
-
+      - main
 jobs:
   pytest-testing:
     runs-on: ubuntu-latest
