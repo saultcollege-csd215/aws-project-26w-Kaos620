@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # --- Configuration ---
-LAMBDA_NAME="<the name of your lambda function>"
+LAMBDA_NAME="csd215-lambda"
 REGION="us-east-1"
 ROOT=.
-SOURCE_DIR="$ROOT/app"
+SOURCE_DIR="./app"
 BUILD_DIR="lambda_package"
 ZIP_FILE="lambda_function.zip"
 
@@ -32,14 +32,15 @@ cp $SOURCE_DIR/__init__.py $SOURCE_DIR/core.py $SOURCE_DIR/data.py $SOURCE_DIR/l
 
 echo "[3/4] Packaging the Lambda function..."
 cd $BUILD_DIR
-zip -r9 ../$ZIP_FILE ./* -x "*.git*" -x "*.DS_Store" > /dev/null
+zip -r9 ../resources/lambda_placeholder.zip ./* -x "*.git*" -x "*.DS_Store" > /dev/null
 cd ..
 
 echo "[4/4] Deploying to AWS Lambda..."
-
 # Replace these two lines with a command that updates your Lambda function code with the new $ZIP_FILE
-echo "You need to update your deployment script to actually deploy the Lambda function."
-exit 1
+aws lambda update-function-code \
+    --function-name "$LAMBDA_NAME" \
+    --zip-file "fileb://resources/lambda_placeholder.zip" \
+    --region "$REGION"
 
 
 echo "--- Deployment completed for $LAMBDA_NAME ---"

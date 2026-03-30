@@ -1,1 +1,39 @@
-name: EC2 Deployment
+name: Deploy to EC2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-to-ec2:
+    runs-on: ubuntu-latest
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: SSH and Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_KEY }}
+          script_stop: true
+          script: |
+            # 1. Clone the repo if it doesn't exist, or pull if it does
+            if [ ! -d "aws-project-26w-Kaos620" ]; then
+              git clone https://github.com/saultcollege-csd215/aws-project-26w-Kaos620.git
+            fi
+            
+            # 2. Move into the project directory
+            cd aws-project-26w-Kaos620
+            
+            # 3. Get the latest changes from your lab branch
+            git checkout main  # REPLACE 'main' with your actual branch name
+            git pull origin main
+            
+            # 4. Now run your deployment script
+            chmod +x resources/deploy_ec2.sh
+            ./resources/deploy_ec2.sh

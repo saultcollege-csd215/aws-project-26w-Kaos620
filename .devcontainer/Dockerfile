@@ -1,5 +1,16 @@
 FROM mcr.microsoft.com/vscode/devcontainers/python:3.9
 
+
+# # Add Yarn GPG key properly
+# RUN mkdir -p /etc/apt/keyrings \
+#     && curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg \
+#     | gpg --dearmor -o /etc/apt/keyrings/yarn.gpg \
+#     && echo "deb [signed-by=/etc/apt/keyrings/yarn.gpg] https://dl.yarnpkg.com/debian stable main" \
+#     > /etc/apt/sources.list.d/yarn.list
+
+
+RUN rm -f /etc/apt/sources.list.d/yarn.list
+
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
     curl \
