@@ -11,16 +11,17 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       
     steps:
-      - name: Checkout Lab Branch
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: SSH and Deploy
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ec2-user
-          key: ${{ secrets.EC2_KEY }}
-          script_stop: true
-          script: |
-            chmod +x resources/deploy_ec2.sh
-            ./resources/deploy_ec2.sh
+            host: ${{ secrets.EC2_HOST }}
+            username: ec2-user
+            key: ${{ secrets.EC2_KEY }}
+            debug: true  # <--- Add this line temporarily
+            script: |
+                ls -la  # Check if the folder exists
+                chmod +x resources/deploy_ec2.sh
+                ./resources/deploy_ec2.sh
